@@ -3,9 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<!--     <link rel="stylesheet" href="style.css"> -->
     <title>MapApp - интерактивный планировщик путешествий</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+*,
+*::before,
+*::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  outline: none;
+}
+
+body {
+  font-family: 'Raleway';
+  font-size: 20px;
+  background-color: #ECEBDF;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+button {
+  cursor: pointer;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+
+.logo {
+    font-size: 30px;
+    color: #4C7E80;
+    font-weight: 700;
+}
+.active {
+    font-weight: 800;
+    color: #1F4748;
+}
+.btn {
+    font-size: 30px;
+    background: #fff;
+    padding: 26px;
+    color: #1F4748;
+    border-radius: 15px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #1F4748;
+    color: #fff;
+    transition: ease 0.3s;
+    
+}
+
+.title {
+    padding-top: 80px;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+
+.header {
+    padding: 0 25px;
+    display: flex;
+    padding-top: 54px;
+}
+.container {
+    width: 1270px;
+    margin: 0 auto;
+}
+.header__nawbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__right-menu {
+    display: flex;
+    gap: 30px;
+}
+
+
+.header__burger {
+    display: none; /* Скрываем бургер на больших экранах */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.burger__line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.itm {
+}
+.nawbar__link {
+}
+.link {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #5c5c5c;
+    letter-spacing: .07em;
+    
+}
+.list {
+    display: flex;
+    gap: 20px;
+}
+
+.link:hover {
+    color: #4C7E80;
+    font-weight: 700;
+    transition: ease 0.3s;
+}
+.header__offer {
+    margin-top: 77px;
+    display: flex;
+    gap: 30px;
+    
+}
+
+.header__image {
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    background: url("../image/header.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.image__block {
+    padding: 20px;
+    width: 70%;
+    background: #fff;
+    border-radius: 15px;
+    margin: 70% 0 0 5%;
+
+}
+.image__title {
+    
+}
+.image__about {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.image__navigation {
+}
+
+
+.header__offer-text {
+    padding: 80px 44px;
+    width: 50%;
+    background: #6AAAAC;
+    border-radius: 20px;
+    position: relative;
+}
+.offer-info {
+    color: #fff;
+}
+.offer-title {
+    font-size: 50px;
+}
+.offer-paragrph {
+    font-size: 30px;
+    margin-top: 1.2em;
+}
+.offer__button {
+    margin-top: 65px;
+}
+
+.square1 {
+    width: 90px;
+    height: 90px;
+    background: #6AAAAC;
+    border: 10px solid #ECEBDF;
+    border-radius: 20px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+
+.square2 {
+    width: 70px;
+    height: 70px;
+    background: #6AAAAC;
+    border: 9px solid #ECEBDF;
+    border-radius: 20px;
+    position: absolute;
+    left: -9px;
+    bottom: -9px;
+}
+
+.header__right-menu {
+    display: flex; /*  Убедитесь, что элементы внутри отображаются корректно */
+    align-items: center;  /*  Выравнивание по вертикали */
+    transition: transform 0.3s ease; /* Анимация появления/исчезновения */
+}
+
+.header__right-menu.active {
+    transform: translateX(0); /* Показываем меню */
+}
+
+
+
+
+
+
+
+
+main p {
+    margin:  200px;
+}
+.footer {
+    margin-top: 200px;
+    padding: 70px 25px;
+    display: flex;
+    background-color: #6AAAAC;
+    color: #fff;
+}
+.footr__top {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__nawbar {
+}
+.footer__lict {
+}
+.footer__item {
+}
+.footer__link {
+    color: #fff;
+    font-size: 30px;
+}
+
+.forma__lable input {
+    background: #D9D9D9;
+    padding: 14px 22px;
+    border-radius: 100px;
+}
+.forma__social {
+}
+.social__img {
+}
+.footr__botton {
+    padding-top: 20px;
+}
+.footr__botton a {
+    opacity: 0.5;
+    padding-right: 40px;
+    font-size: 15px;
+}
+label {
+    margin: 40px 0 0 0;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.forma__social {
+    padding-top: 20px;
+}
+.forma__lable button {
+    background: #1F4748;
+    padding: 14px 22px;
+    color: #fff;
+    border-radius: 100px;
+}
+h3 {
+    font-size: 40px;
+}
+.forma__title p {
+    font-size: 20px;
+}
+
+.footer__item {
+    padding-top: 10px;
+}
+@media (max-width: 950px) {
+    .list {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .link {
+        font-size: 30px;
+        padding-top: 40px;
+    }
+    .itm {
+        padding: 10px 0 0 0;
+    }
+    .header__offer {
+        flex-direction: column;
+    }
+    .header__offer {
+        align-items: center;
+    }
+
+    .header__right-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px; /* или другой размер */
+        height: 100vh;
+        background-color: #fff; /*  Задайте фон, чтобы перекрыть контент */
+        padding: 20px;
+        transform: translateX(100%); /* Скрываем меню за пределами экрана */
+        z-index: 10; /* Убедитесь, что меню перекрывает другой контент */
+        flex-direction: column; /*  Меню в столбик */
+        align-items: flex-start; /* Выравнивание по левому краю */
+        justify-content: flex-start; /* Выравнивание по верхнему краю */
+    }
+    .header__burger {
+        display: block; /* Показываем бургер-меню */
+    }
+    .burger.active .burger__line:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .burger.active .burger__line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .burger__line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    .header__image {
+        width: 100%;
+    }
+    .header__offer-text {
+        width: auto;
+    }
+}
+
+
+
+
+
+        
+    </style>
 </head>
 <body>
     
