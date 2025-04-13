@@ -135,7 +135,7 @@ ol, ul {
     padding: 10px;
     border-radius: 20px;
     width: 50%;
-    background: url("../image/header.png") no-repeat;
+    background: url("header.png") no-repeat;
     background-position: center;
     background-size: cover;
 }
